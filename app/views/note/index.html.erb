@@ -1,0 +1,14 @@
+<h1> 게시판 입니다 </h1>
+
+<br><br>
+<a href='/note/create'>글쓰러가기</a>
+<br><br>
+
+
+<% @note.each do |x| %>
+<hr>
+<a>제목: </a><a href='/note/show/<%=x.id%>'><%= x.title %></a><br>
+<a>내용: </a><%= x.content %> <br>
+<% end %>
+
+

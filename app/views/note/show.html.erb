@@ -1,0 +1,24 @@
+<br>
+
+
+
+<a>제목: </a><%= @note.title %> <br>
+<a>내용: </a><%= @note.content %> <br><br>
+
+<hr>
+<br>
+<form action="/comment/create" method="get">
+  댓글작성: <input type="text" name="comment_content">
+    <input type='hidden' name='note_id' value=<%= @note.id%>>
+    <input type="submit" value="제출">
+</form>
+
+
+<br><a>댓글내용 </a><br>
+
+<% @comment.each do |x| %>
+<ul>
+  <%= x.content %>
+</ul><br>
+
+<% end %>
